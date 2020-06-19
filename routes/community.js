@@ -1,39 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../lib/db");
 const pool = require("../lib/pool");
-const pool2 = require("../lib/pool2");
 const path = require("path");
-
-// router.get("/ex2", (req, res) => {
-//   const users = new Promise((resolve, reject) => {
-//     db.query("SELECT id FROM users", function (err, users) {
-//       if (err) {
-//         reject(Error("error users"));
-//       } else {
-//         resolve(users);
-//       }
-//     });
-//   });
-//   const counting = new Promise((resolve, reject) => {
-//     db.query("SELECT id FROM countings", function (err, counting) {
-//       if (err) {
-//         reject(Error("error counting"));
-//         throw err;
-//       } else {
-//         resolve(counting);
-//       }
-//     });
-//   });
-//   Promise.all([users, counting])
-//     .then((values) => {
-//       console.log(values[0]);
-//       res.json(values[0]);
-//     })
-//     .catch((error) => {
-//       console.error(error + "D");
-//     });
-// });
 
 router.get("/all", async (req, res) => {
   const [postList, fields] = await pool.query(
