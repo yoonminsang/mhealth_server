@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 3001;
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const session = require("express-session");
@@ -8,7 +8,7 @@ const MySQLStore = require("express-mysql-session")(session);
 // const flash = require("connect-flash");
 
 const corsOptions = {
-  origin: "http://localhost:5000",
+  origin: "http://localhost:3000",
 };
 
 app.use(cors(corsOptions));
